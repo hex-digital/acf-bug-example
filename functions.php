@@ -12,11 +12,11 @@ add_action( 'acf/init', function () {
         'category' => 'media',
         'icon' => 'align-pull-right',
         'mode' => 'preview',
-        'render_callback' => 'render_block',
+        'render_callback' => 'bug_test_render_block',
     ) );
 } );
 
-function render_block( $block, $content = '', $is_preview = false, $post_id = 0 ) {
+function bug_test_render_block( $block, $content = '', $is_preview = false, $post_id = 0 ) {
     $block_file_path = __DIR__ . '/blocks/' . $block['name'] . '.php';
 
     if ( file_exists( $block_file_path ) ) {
