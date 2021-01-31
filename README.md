@@ -4,12 +4,16 @@ There appears to be a bug when rendering ACF Blocks that use AlpineJS syntax.
 
 A block containing data like this:
 
+```html
 <section x-data="{query: ''}" x-init="$watch('query', (value) => console.log(this) )"></section>
+```
 
 will escape the trailing quote, meaning the x-init="" is not closed, and the
 code will not work.
 
+```html
 <section x-data="{query: ''}" x-init="$watch('query', (value) => console.log(this) )&#8221;></section>
+```
 
 ## Steps to Reproduce
 
