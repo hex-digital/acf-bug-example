@@ -17,7 +17,7 @@ add_action( 'acf/init', function () {
 } );
 
 function bug_test_render_block( $block, $content = '', $is_preview = false, $post_id = 0 ) {
-    $block_file_path = __DIR__ . '/blocks/' . $block['name'] . '.php';
+    $block_file_path = __DIR__ . '/' . $block['name'] . '.php';
 
     if ( file_exists( $block_file_path ) ) {
         include $block_file_path;
